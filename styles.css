@@ -1,0 +1,136 @@
+/* Reset des marges et des paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0F0F0F;
+    font-family: 'Unna', serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 90vw;
+    max-width: 1200px;
+    background: #0F0F0F;
+    border-radius: 15px;
+}
+
+/* Logo Section */
+.logo-section {
+    background: linear-gradient(94deg, black 0%, rgba(255, 255, 255, 0.75) 100%);
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Unna', serif;
+    text-align: center;
+}
+
+/* Section Film */
+.film-section {
+    background: black;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+}
+
+.film-section h2 {
+    font-size: 2em;
+    font-family: 'Chomsky', serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Section Collaboration */
+.collab-section {
+    background: #272727;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Section Team */
+.team-section {
+    background: #272727;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.team-section h2 {
+    font-size: 2em;
+    font-family: 'Chomsky', serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.team-member {
+    background: #444;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.team-member strong {
+    font-size: 1.2em;
+}
+
+/* Section Making Of */
+.makingof-section {
+    background: linear-gradient(107deg, #306C30 0%, black 100%);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+}
+
+.makingof-section h2 {
+    font-size: 2em;
+    font-family: 'Chomsky', serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
