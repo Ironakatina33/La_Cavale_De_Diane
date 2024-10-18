@@ -72,6 +72,14 @@ body {
     text-align: center;
 }
 
+.team-members {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
 /* Film Section */
 .film-section {
     background-color: #272727;
@@ -145,7 +153,18 @@ body {
     text-align: center;
 }
 
+.team-members, .team-members-end {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
 .team-member-end {
+    grid-column: 1 / -1; /* Pour centrer sur toute la ligne */
+}
+
+.team-members-end {
     grid-column: 1 / -1; /* Pour centrer sur toute la ligne */
 }
 
@@ -154,6 +173,13 @@ body {
     font-size: 1.2em;
     margin-bottom: 5px;
 }
+
+.team-members strong, .team-members-end strong {
+
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
 
 /* Modal pour l'affiche */
 .modal {
