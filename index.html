@@ -19,6 +19,27 @@
             <h1 class="title">La cavale de Diane</h1>
         </div>
 
+        <!-- Info Section -->
+        <div class="info-section">
+            <div class="team-grid">
+                <div class="team-member">
+                    <strong>Affiche</strong>
+                </div>
+                <div class="team-member">
+                    <strong>Synopsis</strong>
+                </div>
+                <div class="team-member poster">
+                    <a href="#" id="openModal">
+                        <img src="https://poster.moncinepack.fr/FR/poster/13D543D9/320/NVKZ5.jpg?optimizer=image"
+                             alt="Affiche du film" class="clickable-image">
+                    </a>
+                </div>
+                <div class="team-member synopsis">
+                    <span>Voici le synopsis de la <strong>Cavale de Diane</strong> : Bla blalblalbojeozfheizhfoizhfeoiehoifhozief</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Section Le Court-Métrage -->
         <div class="film-section">
             <h2>Le Court-Métrage</h2>
@@ -30,7 +51,7 @@
 
         <!-- Collaboration Section -->
         <div class="collab-section">
-            <p>En coopération avec l’association Time Fighters, <strong>Marion Rémazeilles</strong> et <strong>Florian
+            <p>En coopération avec l’association <a href="https://www.facebook.com/lysleopard/?locale=fr_FR" target="_blank">Time Fighters</a>, <strong>Marion Rémazeilles</strong> et <strong>Florian
                     Royer</strong>, qu’on remercie chaleureusement.</p>
         </div>
 
@@ -54,7 +75,7 @@
                     <strong>Nathan Vandaele</strong>
                     <span>Caméraman, motion designer, monteur, ingénieur son</span>
                 </div>
-                <div class="team-member">
+                <div class="team-member-end">
                     <strong>Erwan Guillemart</strong>
                     <span>Captation son, motion designer</span>
                 </div>
@@ -70,6 +91,14 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal pour l'image cliquée -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

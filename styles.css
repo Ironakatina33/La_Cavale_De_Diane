@@ -1,4 +1,4 @@
-/* Reset des marges et des paddings */
+/* Reset de base */
 * {
     margin: 0;
     padding: 0;
@@ -6,63 +6,94 @@
 }
 
 body {
-    background-color: #0F0F0F;
     font-family: 'Unna', serif;
+    background-color: #0F0F0F;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .container {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
-    width: 90vw;
-    max-width: 1200px;
-    background: #0F0F0F;
-    border-radius: 15px;
 }
 
 /* Logo Section */
 .logo-section {
-    background: linear-gradient(94deg, black 0%, rgba(255, 255, 255, 0.75) 100%);
-    height: 150px;
+    text-align: center;
+    background-color: #272727;
+    padding: 20px;
     border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .title {
-    color: white;
     font-size: 2.5em;
-    font-weight: 700;
-    font-family: 'Unna', serif;
+    font-weight: bold;
+    color: white;
+}
+
+/* Info Section (Affiche & Synopsis) */
+.info-section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.poster img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer; /* Effet de curseur pour cliquer */
+}
+
+.synopsis span {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: white;
+}
+
+.team-member {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
 }
 
-/* Section Film */
+/* Film Section */
 .film-section {
-    background: black;
-    border-radius: 15px;
+    background-color: #272727;
     padding: 20px;
-    color: white;
+    border-radius: 15px;
 }
 
 .film-section h2 {
     font-size: 2em;
-    font-family: 'Chomsky', serif;
     text-align: center;
     margin-bottom: 20px;
 }
-
+.makingof-section h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
 .video-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
+    overflow: hidden;
 }
 
 .video-container iframe {
@@ -73,26 +104,24 @@ body {
     height: 100%;
 }
 
-/* Section Collaboration */
+/* Collaboration Section */
 .collab-section {
-    background: #272727;
-    border-radius: 15px;
+    background-color: #333;
     padding: 20px;
-    color: white;
+    border-radius: 15px;
     font-size: 1.2em;
     text-align: center;
 }
 
-/* Section Team */
+/* Team Section */
 .team-section {
-    background: #272727;
-    border-radius: 15px;
+    background-color: #272727;
     padding: 20px;
+    border-radius: 15px;
 }
 
 .team-section h2 {
     font-size: 2em;
-    font-family: 'Chomsky', serif;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -109,28 +138,86 @@ body {
     }
 }
 
-.team-member {
-    background: #444;
-    padding: 10px;
+.team-member, .team-member-end {
+    background-color: #444;
+    padding: 15px;
     border-radius: 10px;
-    color: white;
-}
-
-.team-member strong {
-    font-size: 1.2em;
-}
-
-/* Section Making Of */
-.makingof-section {
-    background: linear-gradient(107deg, #306C30 0%, black 100%);
-    border-radius: 15px;
-    padding: 20px;
-    color: white;
-}
-
-.makingof-section h2 {
-    font-size: 2em;
-    font-family: 'Chomsky', serif;
     text-align: center;
-    margin-bottom: 20px;
 }
+
+.team-member-end {
+    grid-column: 1 / -1; /* Pour centrer sur toute la ligne */
+}
+
+.team-member strong, .team-member-end strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* Modal pour l'affiche */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Reste en place */
+    z-index: 1; /* Au-dessus de tout le contenu */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largeur complète */
+    height: 100%; /* Hauteur complète */
+    overflow: auto; /* Ajoute une barre de défilement si nécessaire */
+    background-color: rgb(0,0,0); /* Couleur de fond noire */
+    background-color: rgba(0,0,0,0.9); /* Couleur de fond noire avec opacité */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Largeur de l'image */
+    max-width: 700px; /* Largeur maximale de l'image */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a { color: #cbf77a; } /* CSS link color */
