@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Unna', serif;
+    font-family: 'Red Hat Display', serif;
     background-color: #0F0F0F;
     color: white;
     display: flex;
@@ -77,7 +77,7 @@ body {
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.82em;
 }
 
 /* Film Section */
